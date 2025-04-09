@@ -1,0 +1,6 @@
+﻿services:
+  slrpbackend:
+    image: slrpbackend
+    build:
+      context: .
+      dockerfile: Dockerfile

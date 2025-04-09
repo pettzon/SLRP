@@ -1,0 +1,6 @@
+@SLRPBackend_HostAddress = http://localhost:5149
+
+GET {{SLRPBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
