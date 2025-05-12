@@ -5,16 +5,12 @@ namespace SLRPBackend.Model;
 public class RpSession
 {
     public string clientId;
-    public string userId;
-    public string sessionId;
 
     public List<LLMMessage> messageHistory;
 
-    public RpSession(string clientId, string userId, string sessionId)
+    public RpSession(string clientId)
     {
         this.clientId = clientId;
-        this.userId = userId;
-        this.sessionId = sessionId;
     }
 
     public class Builder
@@ -23,7 +19,7 @@ public class RpSession
 
         public Builder(string clientId, string userId, string sessionId)
         {
-            rpSession = new RpSession(clientId, userId, sessionId);
+            rpSession = new RpSession(clientId);
         }
 
         public Builder WithPersonality()

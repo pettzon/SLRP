@@ -2,5 +2,5 @@
 
 public interface ILLMService
 {
-    
+    public void LLMRequest();
 }

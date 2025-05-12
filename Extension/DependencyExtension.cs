@@ -4,9 +4,14 @@ namespace SLRPBackend.Extension;
 
 public static class DependencyExtension
 {
-    public static void AddServices(this IServiceCollection services)
+    public static void AddExtraServices(this IServiceCollection services)
     {
-        services.AddHostedService<SessionService>();
-        services.AddHostedService<LLMService>();
+        services.AddSingleton<IAuthService, DebugAuthService>(); // Debug auth
+        services.AddSingleton<ISessionService, SessionService>();
+        services.AddSingleton<IDBService, DBService>();
+        services.AddSingleton<ILLMService, LLMService>();
+
+        // services.AddHostedService<SessionService>();
+        // services.AddHostedService<LLMService>();
     }
 }

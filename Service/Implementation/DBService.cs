@@ -1,13 +1,13 @@
 ﻿namespace SLRPBackend.Service;
 
-public sealed class LLMService : ILLMService
+public sealed class DBService : IDBService
 {
-    public LLMService()
+    public DBService()
     {
         
     }
 
-    public void LLMRequest()
+    public void GetData()
     {
         throw new NotImplementedException();
     }

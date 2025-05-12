@@ -1,8 +1,11 @@
-﻿namespace SLRPBackend.Service;
+﻿using SLRPBackend.Model;
+
+namespace SLRPBackend.Service;
 
 public interface ISessionService
 {
-    public void CreateSession();
     public void EndSession();
-    public void GetSession();
+    public Task<RpClient> GetSession(string uuid);
+    public Task<bool> SessionExists(string uuid);
+    public Task PostSession(SLRPRequest request);
 }
