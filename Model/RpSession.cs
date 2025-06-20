@@ -6,7 +6,7 @@ public class RpSession
 {
     public string clientId;
 
-    public List<LLMMessage> messageHistory;
+    public List<LLMMessage> messageHistory = new List<LLMMessage>();
 
     public RpSession(string clientId)
     {
@@ -17,13 +17,32 @@ public class RpSession
     {
         public RpSession rpSession;
 
-        public Builder(string clientId, string userId, string sessionId)
+        public Builder(string clientId)
         {
             rpSession = new RpSession(clientId);
         }
 
-        public Builder WithPersonality()
+        public Builder WithRules(LLMRules rules)
         {
+            rpSession.messageHistory.Add(new LLMMessage("user", rules.rules));
+            return this;
+        }
+
+        public Builder WithCharacter(LLMCharacter character)
+        {
+            rpSession.messageHistory.Add(new LLMMessage("user", character.character));
+            return this;
+        }
+
+        public Builder WithScenario(LLMScenario scenario)
+        {
+            rpSession.messageHistory.Add(new LLMMessage("user", scenario.scenario));
+            return this;
+        }
+
+        public Builder WithMessage(LLMMessage message)
+        {
+            rpSession.messageHistory.Add(message);
             return this;
         }
 

@@ -16,6 +16,7 @@ public class DebugAuthService : IAuthService
 
     public Task<bool> Authorize(string token)
     {
+        //Authorize right away if using debug token, only for development
         if (token != options.Value.DebugToken) return Task.FromResult(false);
         
         OnAuthorize?.Invoke(token);

@@ -1,6 +1,8 @@
-﻿namespace SLRPBackend.Service;
+﻿using SLRPBackend.Model.LLM;
+
+namespace SLRPBackend.Service;
 
 public interface ILLMService
 {
-    public void LLMRequest();
+    public Task<LLMResponse> LLMRequest(LLMRequest request);
 }

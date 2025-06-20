@@ -8,4 +8,9 @@ public class LLMRequest
     public double temperature = 0.8;
     public int max_tokens = -1;
     public bool stream = false;
+
+    public LLMRequest(string rules, string character, string scenario, List<LLMMessage> messages)
+    {
+        
+    }
 }
